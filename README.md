@@ -47,5 +47,61 @@ Before we start predictions using the tree based regression models we take 3 mon
 
 
 
+Features 
+
+| Feature                | Description                                                                                                   |
+|------------------------|---------------------------------------------------------------------------------------------------------------|
+| **VendorID**           | A code indicating the TPEP provider that provided the record:                                                |
+|                        | - Creative Mobile Technologies                                                                               |
+|                        | - VeriFone Inc.                                                                                              |
+| **tpep_pickup_datetime** | The date and time when the meter was engaged.                                                               |
+| **tpep_dropoff_datetime** | The date and time when the meter was disengaged.                                                           |
+| **Passenger_count**    | The number of passengers in the vehicle. This is a driver-entered value.                                     |
+| **Trip_distance**      | The elapsed trip distance in miles reported by the taximeter.                                                |
+| **Pickup_longitude**   | Longitude where the meter was engaged.                                                                       |
+| **Pickup_latitude**    | Latitude where the meter was engaged.                                                                        |
+| **Dropoff_longitude**  | Longitude where the meter was disengaged.                                                                     |
+| **Dropoff_latitude**   | Latitude where the meter was disengaged.                                                                      |
+| **RateCodeID**         | The final rate code in effect at the end of the trip:                                                        |
+|                        | - Standard rate                                                                                              |
+|                        | - JFK                                                                                                        |
+|                        | - Newark                                                                                                     |
+|                        | - Nassau or Westchester                                                                                      |
+|                        | - Negotiated fare                                                                                           |
+|                        | - Group ride                                                                                                |
+| **Store_and_fwd_flag** | Indicates whether the trip record was held in vehicle memory before sending to the vendor (store and forward): |
+|                        | - `Y`: Store and forward trip                                                                                |
+|                        | - `N`: Not a store and forward trip                                                                          |
+| **Payment_type**       | A numeric code signifying how the passenger paid for the trip:                                               |
+|                        | 1. Credit card                                                                                               |
+|                        | 2. Cash                                                                                                      |
+|                        | 3. No charge                                                                                                |
+|                        | 4. Dispute                                                                                                   |
+|                        | 5. Unknown                                                                                                   |
+|                        | 6. Voided trip                                                                                               |
+| **Fare_amount**        | The time-and-distance fare calculated by the meter.                                                          |
+| **Extra**              | Miscellaneous extras and surcharges (e.g., $0.50 and $1 rush hour and overnight charges).                    |
+| **MTA_tax**            | $0.50 MTA tax that is automatically triggered based on the metered rate in use.                              |
+| **Improvement_surcharge** | $0.30 improvement surcharge assessed at the flag drop (introduced in 2015).                                |
+| **Tip_amount**         | Tip amount – Automatically populated for credit card tips. Cash tips are not included.                        |
+| **Tolls_amount**       | Total amount of all tolls paid in the trip.                                                                   |
+| **Total_amount**       | The total amount charged to passengers (does not include cash tips).                                          |
+
+
+
+
+
+Error Metrics 
+
+| Model                            | Train MAPE         | Test MAPE         |
+|----------------------------------|--------------------|-------------------|
+| **Baseline Model**               | 0.140052758787     | 0.136531257048    |
+| **Exponential Averages Forecasting** | 0.13289968436      | 0.129361804204    |
+| **Linear Regression**            | 0.13331572016      | 0.129120299401    |
+| **Random Forest Regression**     | 0.0917619544199    | 0.127244647137    |
+| **XGBoost Regression**           | 0.129387355679     | 0.126861699078    |
+
+
+
 
 
