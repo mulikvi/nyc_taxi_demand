@@ -41,13 +41,13 @@ Through weighted averaged we have satisfied the analogy of giving higher weights
 We have chosen our error metric for comparison between models as MAPE (Mean Absolute Percentage Error) so that we can know that on an average how good is our model with predictions and MSE (Mean Squared Error) is also used so that we have a clearer understanding as to how well our forecasting model performs with outliers so that we make sure that there is not much of a error margin between our prediction and the actual value
 
 
-Regression Models
-Train-Test Split
+<b>Regression Models</b><br>
+Train-Test Split<br>
 Before we start predictions using the tree based regression models we take 3 months of 2016 pickup data and split it such that for every region we have 70% data in train and 30% in test, ordered date-wise for every region
 
 
 
-Features 
+<b>Features</b>
 
 | Feature                | Description                                                                                                   |
 |------------------------|---------------------------------------------------------------------------------------------------------------|
@@ -90,8 +90,8 @@ Features
 
 
 
-
-Error Metrics 
+<br><br>
+<b>Error Metrics</b><br>
 
 | Model                            | Train MAPE         | Test MAPE         |
 |----------------------------------|--------------------|-------------------|
